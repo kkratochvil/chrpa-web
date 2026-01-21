@@ -1,0 +1,98 @@
+================================================================================
+VZORY PRO akce.json
+================================================================================
+
+JSON nepodporuje komentáře, proto je tento soubor jako textová šablona.
+Kopíruj jednotlivé bloky do akce.json a uprav hodnoty.
+
+================================================================================
+AKCE (koncert, festival)
+================================================================================
+
+{
+    "typ": "akce",
+    "nazev": "Název akce",
+    "datum": "7. 2. 2026",
+    "cas": "18:00",
+    "misto": "Místo konání",
+    "popis": "Popis akce - kdo vystupuje, co se bude dít...",
+    "vstupne": "350 Kč",
+    "letak": "images/letaky/nazev_letaku.jpg",
+    "platnost_od": "",
+    "platnost_do": "7.2.2026"
+}
+
+================================================================================
+PŘÍSPĚVEK S OBRÁZKEM
+================================================================================
+
+{
+    "typ": "prispevek",
+    "datum": "21. 1. 2026",
+    "text": "Text příspěvku - co se děje, poděkování, oznámení...",
+    "obrazek": "images/novinky/nazev_obrazku.jpg",
+    "platnost_od": "",
+    "platnost_do": ""
+}
+
+================================================================================
+PŘÍSPĚVEK BEZ OBRÁZKU (zobrazí se logo Chrpy)
+================================================================================
+
+{
+    "typ": "prispevek",
+    "datum": "21. 1. 2026",
+    "text": "Text příspěvku bez obrázku...",
+    "obrazek": "",
+    "platnost_od": "",
+    "platnost_do": ""
+}
+
+================================================================================
+KOMPLETNÍ PŘÍKLAD akce.json
+================================================================================
+
+[
+    {
+        "typ": "prispevek",
+        "datum": "25. 1. 2026",
+        "text": "Děkujeme všem, kteří přišli na náš koncert!",
+        "obrazek": "images/novinky/koncert_foto.jpg",
+        "platnost_od": "",
+        "platnost_do": "15.2.2026"
+    },
+    {
+        "typ": "akce",
+        "nazev": "Písně dávnejch cest",
+        "datum": "7. 2. 2026",
+        "cas": "18:00",
+        "misto": "Malá scéna KC, Česká Třebová",
+        "popis": "Trampský večer s kapelami Chrpa, Samson Lenk a JeDaRa.",
+        "vstupne": "350 Kč",
+        "letak": "images/letaky/pisne_davnejch_cest.jpg",
+        "platnost_od": "",
+        "platnost_do": "7.2.2026"
+    },
+    {
+        "typ": "akce",
+        "nazev": "Trampské jaro",
+        "datum": "21. 3. 2026",
+        "cas": "19:00",
+        "misto": "Divadlo K. Pippicha, Chrudim",
+        "popis": "Tradiční jarní koncert v Chrudimi.",
+        "vstupne": "",
+        "letak": "images/letaky/trampske_jaro.jpg",
+        "platnost_od": "1.2.2026",
+        "platnost_do": "21.3.2026"
+    }
+]
+
+================================================================================
+POZNÁMKY
+================================================================================
+
+- Položky se zobrazují v pořadí, jak jsou v JSON (nejnovější dej nahoru)
+- Mezi položkami musí být ČÁRKA (kromě poslední!)
+- Prázdné hodnoty: ""
+- Formát data platnosti: D.M.YYYY (např. 1.1.2026 nebo 15.12.2026)
+- Obrázky nahrát do images/letaky/ nebo images/novinky/
