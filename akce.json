@@ -1,0 +1,14 @@
+[
+    {
+        "typ": "akce",
+        "nazev": "Pisne davnejch cest",
+        "datum": "7. 2. 2026",
+        "cas": "18:00",
+        "misto": "Mala scena KC, Ceska Trebova",
+        "popis": "Trampsky vecer s kapelami Chrpa z Chrudimi, Samson Lenk a JeDaRa z Pribrami. Veceren provede Petr Kulda.",
+        "vstupne": "350 Kc",
+        "letak": "images/letaky/pisne_davnejch_cest.jpg",
+        "platnost_od": "",
+        "platnost_do": "7.2.2026"
+    }
+]

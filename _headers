@@ -1,0 +1,27 @@
+# Cache static assets
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/galerie/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/diskografie/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/nahravky/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/kroniky/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Ensure correct MIME types
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=86400

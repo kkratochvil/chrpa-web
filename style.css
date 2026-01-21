@@ -1,0 +1,1746 @@
+/* ========================================
+   CHRPA CHRUDIM - Styly webu
+   Barvy odvozené z vlajky: okrová + chrpově modrá
+   ======================================== */
+
+/* Barvy z vlajky - přesné hodnoty */
+:root {
+    --color-okr: #FBB63A;           /* Žlutá z loga */
+    --color-okr-dark: #E5A430;      /* Tmavší žlutá */
+    --color-okr-light: #FCC55A;     /* Světlejší žlutá */
+    --color-chrpa: #1E607A;         /* Modrá z loga */
+    --color-chrpa-dark: #164858;    /* Tmavší modrá */
+    --color-chrpa-light: #2878A0;   /* Světlejší modrá */
+    --color-cream: #FFFEF8;         /* Světlé pozadí */
+    --color-cream-alt: #FFF8E8;     /* Alternativní - lehce žlutá */
+    --color-text: #1A2F35;          /* Tmavý text */
+    --color-text-light: #4A5A5D;    /* Světlejší text */
+}
+
+/* Reset a základy */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-cream);
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========================================
+   NAVIGACE
+   ======================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-chrpa-dark);
+    padding: 0.5rem 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-logo img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-okr);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-logo-text:hover {
+    color: var(--color-okr-light);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--color-cream);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--color-okr);
+    border-bottom-color: var(--color-okr);
+}
+
+/* Sociální sítě v navigaci */
+.nav-social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-social a {
+    color: var(--color-cream);
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.nav-social a:hover {
+    color: var(--color-okr);
+    transform: scale(1.1);
+}
+
+.nav-social svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* Mobilní menu toggle */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--color-cream);
+    transition: all 0.3s ease;
+}
+
+/* ========================================
+   HERO SEKCE
+   ======================================== */
+.hero {
+    min-height: 100vh;
+    position: relative;
+    padding-top: 70px;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    background: url('images/chrpa_uvodni.jpg') center/cover;
+    z-index: 1;
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 15rem;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-logo-bottom {
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 150px;
+    height: auto;
+    filter: drop-shadow(0 4px 15px rgba(0,0,0,0.5));
+}
+
+.hero-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 0.75rem;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 8rem;
+    color: white;
+    margin: 0;
+    text-shadow: 4px 4px 12px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.5);
+    font-weight: 400;
+}
+
+/* ========================================
+   SEKCE - OBECNÉ
+   ======================================== */
+.section {
+    padding: 5rem 0;
+}
+
+.section-alt {
+    background-color: var(--color-cream-alt);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    color: var(--color-chrpa-dark);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--color-okr);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+.section-intro {
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.section-dedication {
+    text-align: center;
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: -1rem auto 3rem;
+    padding: 1.5rem 2rem;
+    background: rgba(30, 96, 122, 0.05);
+    border-left: 3px solid var(--color-chrpa);
+    border-radius: 0 8px 8px 0;
+}
+
+/* ========================================
+   O NÁS
+   ======================================== */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.about-images {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+.about-image {
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+}
+
+.image-caption {
+    display: block;
+    margin-top: 0.75rem;
+    font-style: italic;
+    color: var(--color-text-light);
+}
+
+/* Video highlight box */
+.video-highlight {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--color-chrpa) 0%, var(--color-chrpa-dark) 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.video-highlight-content {
+    flex: 1;
+}
+
+.video-highlight-content h3 {
+    color: var(--color-okr);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.video-highlight-content p {
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1rem;
+}
+
+.video-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-okr);
+    color: var(--color-chrpa-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.video-link:hover {
+    background: var(--color-okr-light);
+    transform: scale(1.05);
+}
+
+.play-icon {
+    font-size: 0.9rem;
+}
+
+.video-highlight-thumb {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.video-highlight-thumb a {
+    display: block;
+    position: relative;
+}
+
+.video-highlight-thumb img {
+    width: 280px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.video-highlight-thumb a:hover img {
+    transform: scale(1.03);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    padding-left: 5px;
+    transition: all 0.3s ease;
+}
+
+.video-highlight-thumb a:hover .play-overlay {
+    background: var(--color-okr);
+    color: var(--color-chrpa-dark);
+}
+
+@media (max-width: 700px) {
+    .video-highlight {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .video-highlight-thumb img {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* ========================================
+   FACEBOOK BOX
+   ======================================== */
+.facebook-box {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.facebook-content {
+    background: white;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.facebook-icon {
+    width: 60px;
+    height: 60px;
+    fill: #1877F2;
+    margin-bottom: 1.5rem;
+}
+
+.facebook-content h3 {
+    color: var(--color-chrpa-dark);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.facebook-content p {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.facebook-button {
+    display: inline-block;
+    background: #1877F2;
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.facebook-button:hover {
+    background: #166FE5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4);
+}
+
+/* ========================================
+   KRONIKY
+   ======================================== */
+.chronicles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.chronicle-card {
+    display: block;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chronicle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.chronicle-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.chronicle-card h3 {
+    padding: 1rem 1rem 0.25rem;
+    color: var(--color-chrpa-dark);
+    font-size: 1.2rem;
+}
+
+.chronicle-card p {
+    padding: 0 1rem 1rem;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+.chronicles-note {
+    text-align: center;
+    color: var(--color-text-light);
+    font-style: italic;
+}
+
+/* Prohlížeč kronik */
+.chronicle-viewer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.chronicle-viewer.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.chronicle-viewer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--color-chrpa-dark);
+}
+
+.chronicle-viewer-title {
+    color: var(--color-okr);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.chronicle-viewer-close {
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.chronicle-viewer-close:hover {
+    color: var(--color-okr);
+}
+
+.chronicle-viewer-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.chronicle-viewer-img {
+    max-height: calc(100vh - 150px);
+    max-width: calc(100vw - 150px);
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+}
+
+.chronicle-nav {
+    background: var(--color-chrpa);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.chronicle-nav:hover {
+    background: var(--color-okr);
+    color: var(--color-chrpa-dark);
+    transform: scale(1.1);
+}
+
+.chronicle-nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.chronicle-viewer-footer {
+    padding: 1rem;
+    text-align: center;
+    background: var(--color-chrpa-dark);
+}
+
+.chronicle-viewer-page {
+    color: white;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .chronicle-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .chronicle-viewer-img {
+        max-width: calc(100vw - 100px);
+    }
+}
+
+/* ========================================
+   FACEBOOK FEED / NOVINKY
+   ======================================== */
+.facebook-feed {
+    display: flex;
+    justify-content: center;
+}
+
+.facebook-feed iframe {
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    max-width: 100%;
+}
+
+/* ========================================
+   KONCERTY
+   ======================================== */
+.concerts-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.concerts-table thead {
+    background: var(--color-chrpa);
+    color: white;
+}
+
+.concerts-table th,
+.concerts-table td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+}
+
+.concerts-table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.concerts-table tbody tr {
+    border-bottom: 1px solid var(--color-cream-alt);
+    transition: background 0.3s ease;
+}
+
+.concerts-table tbody tr:hover {
+    background: var(--color-cream);
+}
+
+.concerts-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.concerts-note {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* ========================================
+   UKÁZKY
+   ======================================== */
+.samples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.sample-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--color-okr);
+}
+
+.sample-item h3 {
+    color: var(--color-chrpa-dark);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.sample-item audio {
+    width: 100%;
+    height: 45px;
+}
+
+.sample-video {
+    grid-column: 1 / -1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ========================================
+   ČLENOVÉ
+   ======================================== */
+.members-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.member-card {
+    width: 300px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.member-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 15px 15px 30px rgba(0,0,0,0.2), 0 0 0 1px var(--color-okr);
+}
+
+.member-card img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.4s ease;
+}
+
+.member-card:hover img {
+    transform: scale(1.05);
+}
+
+.member-card h3 {
+    padding: 1rem 1.5rem 0.25rem;
+    color: var(--color-chrpa-dark);
+    font-size: 1.3rem;
+}
+
+.member-instrument {
+    display: inline-block;
+    padding: 0.25rem 1.5rem;
+    color: var(--color-okr-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.member-card p {
+    padding: 0.5rem 1.5rem 1.5rem;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+
+.members-note {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(139, 90, 43, 0.08);
+    border-radius: 12px;
+    text-align: center;
+    color: var(--color-text);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* ========================================
+   GALERIE - ACCORDION
+   ======================================== */
+.gallery-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.accordion-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    background: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-chrpa-dark);
+    transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+    background: var(--color-cream);
+}
+
+.accordion-item.active .accordion-header {
+    background: var(--color-chrpa);
+    color: white;
+}
+
+.accordion-icon {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 2000px;
+}
+
+.accordion-content .gallery-grid {
+    padding: 1.5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(43, 107, 138, 0.4) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+.gallery-item .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.gallery-item.video-item {
+    aspect-ratio: 16/9;
+}
+
+.gallery-item.video-item::after {
+    display: none;
+}
+
+/* Lightbox pro zvětšení fotek */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    cursor: zoom-out;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.lightbox.active img {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+.lightbox-close:hover {
+    transform: scale(1.2);
+}
+
+/* ========================================
+   DISKOGRAFIE (akordeon)
+   ======================================== */
+.disco-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.disco-header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.disco-thumb {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.disco-tracks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem 0;
+}
+
+.disco-tracks .sample-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.disco-tracks .sample-item h3 {
+    font-size: 0.95rem;
+    color: var(--color-chrpa-dark);
+    margin: 0;
+    min-width: 180px;
+    font-weight: 500;
+}
+
+.disco-tracks .sample-item audio {
+    flex: 1;
+    height: 36px;
+}
+
+@media (max-width: 768px) {
+    .disco-tracks .sample-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .disco-tracks .sample-item h3 {
+        min-width: auto;
+    }
+
+    .disco-thumb {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ========================================
+   KONTAKT
+   ======================================== */
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--color-okr);
+}
+
+.contact-item h3 {
+    color: var(--color-chrpa-dark);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.contact-item p {
+    margin-bottom: 0.3rem;
+}
+
+.social-links a {
+    display: inline-block;
+    color: var(--color-chrpa);
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-okr-dark);
+}
+
+.download-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.download-links a {
+    display: inline-block;
+    background: var(--color-chrpa);
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.download-links a:hover {
+    background: var(--color-okr);
+    color: var(--color-chrpa-dark);
+    transform: translateY(-2px);
+}
+
+.contact-note {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+
+
+/* ========================================
+   PATIČKA
+   ======================================== */
+.footer {
+    background: var(--color-chrpa-dark);
+    color: var(--color-cream);
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.footer p {
+    opacity: 0.9;
+}
+
+/* ========================================
+   RESPONZIVITA
+   ======================================== */
+@media (max-width: 900px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-image {
+        order: -1;
+    }
+
+    .about-image img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .about-images {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobilní navigace */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-chrpa-dark);
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 0;
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-social {
+        border-left: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Hero - mobilní */
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero-logo {
+        width: 80px;
+    }
+
+    /* Sekce */
+    .section {
+        padding: 3rem 0;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    /* Tabulka koncertů - mobilní zobrazení */
+    .concerts-table thead {
+        display: none;
+    }
+
+    .concerts-table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid var(--color-cream-alt);
+        border-radius: 8px;
+    }
+
+    .concerts-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid var(--color-cream-alt);
+        text-align: right;
+    }
+
+    .concerts-table td:last-child {
+        border-bottom: none;
+    }
+
+    .concerts-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--color-chrpa);
+        flex-shrink: 0;
+        text-align: left;
+    }
+
+    /* Galerie na tabletu - 2 sloupce */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Písničky na tabletu */
+    .samples-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Kroniky na tabletu */
+    .chronicles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Členové na tabletu */
+    .member-card {
+        width: 250px;
+    }
+
+    .member-card img {
+        height: 350px;
+    }
+
+    /* Diskografie na tabletu */
+    .disco-tracks .sample-item {
+        flex-direction: row;
+    }
+
+    .disco-tracks .sample-item h3 {
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Základní opravy pro iOS Safari */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .section {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-logo-bottom {
+        width: 100px;
+        bottom: 2rem;
+    }
+
+    /* Sekce - menší padding */
+    .section {
+        padding: 2rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* O nás - mobil */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .about-image img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .about-images {
+        width: 100%;
+    }
+
+    .about-text {
+        width: 100%;
+    }
+
+    /* Písničky - grid na 1 sloupec */
+    .samples-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .sample-item {
+        padding: 1rem;
+    }
+
+    .sample-item h3 {
+        font-size: 1rem;
+    }
+
+    /* Členové - 1 sloupec */
+    .members-grid {
+        gap: 1.5rem;
+    }
+
+    .member-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .member-card img {
+        height: 320px;
+    }
+
+    /* Galerie - 1 sloupec */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .accordion-header {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .accordion-content .gallery-grid {
+        padding: 1rem;
+    }
+
+    /* Diskografie */
+    .disco-accordion {
+        gap: 0.5rem;
+    }
+
+    .disco-header-content {
+        gap: 0.75rem;
+    }
+
+    .disco-thumb {
+        width: 40px;
+        height: 40px;
+    }
+
+    .disco-tracks {
+        gap: 0.5rem;
+    }
+
+    .disco-tracks .sample-item {
+        padding: 0.6rem 0.8rem;
+    }
+
+    .disco-tracks .sample-item h3 {
+        font-size: 0.85rem;
+        min-width: auto;
+    }
+
+    /* Kroniky */
+    .chronicles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .chronicle-card img {
+        height: 120px;
+    }
+
+    /* Kontakt */
+    .download-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .download-links a {
+        text-align: center;
+    }
+
+    /* Facebook feed */
+    .facebook-feed iframe {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    /* Video box */
+    .video-highlight-thumb {
+        max-width: 200px;
+    }
+}
+
+/* ========================================
+   AKCE - KARTY
+   ======================================== */
+.akce-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.akce-card {
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.akce-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.akce-letak {
+    flex-shrink: 0;
+    width: 280px;
+    min-height: 180px;
+    background: var(--color-cream);
+}
+
+.akce-letak img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.akce-letak:hover img {
+    transform: scale(1.02);
+}
+
+.akce-info {
+    flex: 1;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.akce-info h3 {
+    font-size: 1.6rem;
+    color: var(--color-chrpa-dark);
+    margin-bottom: 0.5rem;
+}
+
+.akce-datum {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-okr-dark);
+    margin-bottom: 0.25rem;
+}
+
+.akce-misto {
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+}
+
+.akce-popis {
+    flex: 1;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.akce-vstupne {
+    font-weight: 600;
+    color: var(--color-chrpa);
+    margin-bottom: 1rem;
+}
+
+.akce-btn {
+    display: inline-block;
+    background: var(--color-chrpa);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.akce-btn:hover {
+    background: var(--color-okr);
+    color: var(--color-chrpa-dark);
+}
+
+.akce-empty {
+    text-align: center;
+    color: var(--color-text-light);
+    font-style: italic;
+    padding: 2rem;
+}
+
+/* Facebook box malý */
+.facebook-box-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    color: var(--color-text-light);
+}
+
+.facebook-icon-small {
+    width: 24px;
+    height: 24px;
+    fill: #1877F2;
+    flex-shrink: 0;
+}
+
+.facebook-box-small a {
+    color: #1877F2;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.facebook-box-small a:hover {
+    text-decoration: underline;
+}
+
+/* Akce - responzivita */
+@media (max-width: 768px) {
+    .akce-card {
+        flex-direction: column;
+    }
+
+    .akce-letak {
+        width: 100%;
+        max-height: 400px;
+    }
+
+    .akce-info {
+        padding: 1.25rem;
+    }
+
+    .akce-info h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .akce-letak {
+        max-height: 300px;
+    }
+
+    .akce-info {
+        padding: 1rem;
+    }
+
+    .akce-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .facebook-box-small {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+
+/* ========================================
+   PRISPEVKY (FB styl)
+   ======================================== */
+/* Příspěvek s obrázkem - obrázek vlevo, text vpravo */
+.prispevek-card {
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.prispevek-obrazek {
+    flex-shrink: 0;
+    width: 280px;
+    min-height: 180px;
+    background: var(--color-cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo Chrpy pro příspěvky bez obrázku */
+.prispevek-obrazek.logo-placeholder {
+    padding: 2rem;
+}
+
+.prispevek-obrazek.logo-placeholder img {
+    width: auto;
+    height: auto;
+    max-width: 120px;
+    max-height: 120px;
+    object-fit: contain;
+    opacity: 0.6;
+}
+
+.prispevek-obrazek img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.prispevek-obrazek:hover img {
+    transform: scale(1.02);
+}
+
+.prispevek-obsah {
+    flex: 1;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.prispevek-datum {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.75rem;
+}
+
+.prispevek-text {
+    color: var(--color-text);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* Prispevky - responzivita */
+@media (max-width: 768px) {
+    .prispevek-card {
+        flex-direction: column;
+    }
+
+    .prispevek-obrazek {
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .prispevek-obrazek.logo-placeholder {
+        min-height: 120px;
+    }
+
+    .prispevek-obsah {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .prispevek-obrazek {
+        min-height: 150px;
+    }
+
+    .prispevek-obrazek.logo-placeholder {
+        min-height: 100px;
+    }
+
+    .prispevek-obsah {
+        padding: 1rem;
+    }
+
+    .prispevek-text {
+        font-size: 1rem;
+    }
+}
