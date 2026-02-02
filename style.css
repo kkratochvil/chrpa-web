@@ -1715,8 +1715,13 @@ img {
 }
 
 /* Kompaktní příspěvek bez obrázku */
+.prispevek-compact {
+    width: 100%;
+}
+
 .prispevek-compact .prispevek-obsah {
     padding: 1.5rem 2rem;
+    width: 100%;
 }
 
 .prispevek-compact .akce-btn {
