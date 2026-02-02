@@ -74,7 +74,6 @@
             <ul class="nav-menu">
                 <li><a href="#o-nas">O nás</a></li>
                 <li><a href="#novinky">Novinky</a></li>
-                <li><a href="#koncerty">Koncerty</a></li>
                 <li><a href="#pisnicky">Písničky</a></li>
                 <li><a href="#diskografie">Diskografie</a></li>
                 <li><a href="#clenove">Členové</a></li>
@@ -172,58 +171,6 @@
                 <svg class="facebook-icon-small" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 <span>Sledujte nás na <a href="https://www.facebook.com/profile.php?id=61577306934961" target="_blank">Facebooku</a> pro další novinky</span>
             </div>
-        </div>
-    </section>
-
-    <!-- Koncerty -->
-    <section id="koncerty" class="section">
-        <div class="container">
-            <h2>Koncerty</h2>
-            <p class="section-intro">Kde nás můžete vidět a slyšet</p>
-
-            <!--
-                NÁVOD PRO EDITACI:
-                Pro přidání nového koncertu zkopírujte blok <tr>...</tr> a upravte údaje.
-                Pro smazání koncertu smažte celý blok <tr>...</tr>.
-            -->
-            <table class="concerts-table">
-                <thead>
-                    <tr>
-                        <th>Datum</th>
-                        <th>Název</th>
-                        <th>Místo</th>
-                        <th>Zvadlo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td data-label="Datum">7.2.2026</td>
-                        <td data-label="Název">Písně dávnejch cest</td>
-                        <td data-label="Místo">Česká Třebová</td>
-                        <td data-label="Zvadlo"><a href="images/letaky/pisne_davnejch_cest.jpg" target="_blank">📄</a></td>
-                    </tr>
-                    <tr>
-                        <td data-label="Datum">21.3.2026</td>
-                        <td data-label="Název">Trampské jaro</td>
-                        <td data-label="Místo">Chrudim</td>
-                        <td data-label="Zvadlo"></td>
-                    </tr>
-                    <tr>
-                        <td data-label="Datum">29-31.5.2026</td>
-                        <td data-label="Název">50. Festival trampských písní</td>
-                        <td data-label="Místo">Horní Jelení</td>
-                        <td data-label="Zvadlo"></td>
-                    </tr>
-                    <tr>
-                        <td data-label="Datum">17.10.2026</td>
-                        <td data-label="Název">Trampský podzim</td>
-                        <td data-label="Místo">Chrudim</td>
-                        <td data-label="Zvadlo"></td>
-                    </tr>
-                    <!-- Přidejte další koncerty zde -->
-                </tbody>
-            </table>
-
         </div>
     </section>
 
@@ -1018,17 +965,43 @@
                             </div>
                         `;
                     } else if (item.typ === 'prispevek') {
-                        return `
-                            <div class="prispevek-card">
-                                <div class="prispevek-obrazek${item.obrazek ? '' : ' logo-placeholder'}">
-                                    <img src="${item.obrazek || 'images/CHRPA_vlajka.png'}" alt="" loading="lazy">
+                        // Tlačítko - zobrazí se pouze pokud má text
+                        const pBtnText = item.tlacitko_text || '';
+                        const pBtnLink = item.tlacitko_link || '';
+                        const pBtnHtml = pBtnText && pBtnLink
+                            ? `<a href="${pBtnLink}" target="_blank" class="akce-btn">${pBtnText}</a>`
+                            : '';
+
+                        // Nadpis příspěvku (volitelný)
+                        const pNadpis = item.nadpis ? `<h3 class="prispevek-nadpis">${item.nadpis}</h3>` : '';
+
+                        // Pokud není obrázek, kompaktnější zobrazení
+                        if (item.obrazek) {
+                            return `
+                                <div class="prispevek-card">
+                                    <div class="prispevek-obrazek">
+                                        <img src="${item.obrazek}" alt="" loading="lazy">
+                                    </div>
+                                    <div class="prispevek-obsah">
+                                        <div class="prispevek-datum">${item.datum}</div>
+                                        ${pNadpis}
+                                        <p class="prispevek-text">${item.text}</p>
+                                        ${pBtnHtml}
+                                    </div>
                                 </div>
-                                <div class="prispevek-obsah">
-                                    <div class="prispevek-datum">${item.datum}</div>
-                                    <p class="prispevek-text">${item.text}</p>
+                            `;
+                        } else {
+                            return `
+                                <div class="prispevek-card prispevek-compact">
+                                    <div class="prispevek-obsah">
+                                        <div class="prispevek-datum">${item.datum}</div>
+                                        ${pNadpis}
+                                        <p class="prispevek-text">${item.text}</p>
+                                        ${pBtnHtml}
+                                    </div>
                                 </div>
-                            </div>
-                        `;
+                            `;
+                        }
                     }
                     return '';
                 }).join('');

@@ -49,24 +49,38 @@ Příklady:
 {
     "typ": "prispevek",
     "datum": "21. 1. 2026",
+    "nadpis": "Název příspěvku",
     "text": "Text příspěvku...",
     "obrazek": "images/novinky/fotka.jpg",
+    "tlacitko_text": "Fotky na Facebooku",
+    "tlacitko_link": "https://facebook.com/album/...",
     "platnost_od": "",
     "platnost_do": ""
 }
 ```
 
-Příspěvek bez obrázku - zobrazí se logo Chrpy:
+Příspěvek bez obrázku - zobrazí se kompaktně:
 ```json
 {
     "typ": "prispevek",
-    "datum": "21. 1. 2026",
-    "text": "Text příspěvku bez obrázku...",
+    "datum": "1. 2. 2026",
+    "nadpis": "Hraní v pivnici Svatý Mikuláš",
+    "text": "V sobotu jsme na pozvání kamaráda zajeli zahrát...",
     "obrazek": "",
+    "tlacitko_text": "Fotky na Facebooku",
+    "tlacitko_link": "https://facebook.com/album/...",
     "platnost_od": "",
-    "platnost_do": ""
+    "platnost_do": "6.2.2026"
 }
 ```
+
+| Pole | Popis |
+|------|-------|
+| `nadpis` | Název/titulek příspěvku (volitelný) |
+| `text` | Delší popis, co se dělo |
+| `obrazek` | Cesta k obrázku (prázdné = kompaktní zobrazení) |
+| `tlacitko_text` | Text tlačítka (prázdné = bez tlačítka) |
+| `tlacitko_link` | Odkaz např. na FB album |
 
 ## Platnost příspěvků
 

@@ -41,24 +41,37 @@ PŘÍSPĚVEK S OBRÁZKEM
 {
     "typ": "prispevek",
     "datum": "21. 1. 2026",
-    "text": "Text příspěvku - co se děje, poděkování, oznámení...",
+    "nadpis": "Název příspěvku",
+    "text": "Text příspěvku - co se dělo, poděkování, oznámení...",
     "obrazek": "images/novinky/nazev_obrazku.jpg",
+    "tlacitko_text": "",
+    "tlacitko_link": "",
     "platnost_od": "",
     "platnost_do": ""
 }
 
 ================================================================================
-PŘÍSPĚVEK BEZ OBRÁZKU (zobrazí se logo Chrpy)
+PŘÍSPĚVEK BEZ OBRÁZKU (kompaktní zobrazení s odkazem na FB)
 ================================================================================
 
 {
     "typ": "prispevek",
-    "datum": "21. 1. 2026",
-    "text": "Text příspěvku bez obrázku...",
+    "datum": "1. 2. 2026",
+    "nadpis": "Hraní v pivnici Svatý Mikuláš Vraclav",
+    "text": "V sobotu jsme na pozvání kamaráda zajeli zahrát, zazpívat a popít. Sice s námi nejela Ája, ale i tak jsme snad ostudu neudělali.",
     "obrazek": "",
+    "tlacitko_text": "Fotky na Facebooku",
+    "tlacitko_link": "https://www.facebook.com/p/Pivnice-Vraclav/",
     "platnost_od": "",
-    "platnost_do": ""
+    "platnost_do": "6.2.2026"
 }
+
+POLE PŘÍSPĚVKU:
+- nadpis       = titulek příspěvku (volitelné)
+- text         = popis, co se dělo
+- obrazek      = cesta k obrázku (prázdné "" = kompaktní zobrazení bez obrázku)
+- tlacitko_text = text na tlačítku (prázdné "" = tlačítko se nezobrazí)
+- tlacitko_link = odkaz na FB album apod.
 
 ================================================================================
 KOMPLETNÍ PŘÍKLAD akce.json
@@ -68,8 +81,11 @@ KOMPLETNÍ PŘÍKLAD akce.json
     {
         "typ": "prispevek",
         "datum": "25. 1. 2026",
-        "text": "Děkujeme všem, kteří přišli na náš koncert!",
-        "obrazek": "images/novinky/koncert_foto.jpg",
+        "nadpis": "Potlach u Radima",
+        "text": "Skvělý potlach u Radima! Děkujeme všem, kdo dorazili.",
+        "obrazek": "",
+        "tlacitko_text": "Fotky na Facebooku",
+        "tlacitko_link": "https://www.facebook.com/media/set/?set=a.123456",
         "platnost_od": "",
         "platnost_do": "15.2.2026"
     },

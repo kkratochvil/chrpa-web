@@ -1698,13 +1698,33 @@ img {
 .prispevek-datum {
     font-size: 0.85rem;
     color: var(--color-text-light);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.prispevek-nadpis {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    margin: 0 0 0.75rem 0;
 }
 
 .prispevek-text {
     color: var(--color-text);
     line-height: 1.7;
     font-size: 1.05rem;
+}
+
+/* Kompaktní příspěvek bez obrázku */
+.prispevek-compact {
+    max-width: 600px;
+}
+
+.prispevek-compact .prispevek-obsah {
+    padding: 1.5rem 2rem;
+}
+
+.prispevek-compact .akce-btn {
+    margin-top: 1rem;
 }
 
 /* Prispevky - responzivita */
