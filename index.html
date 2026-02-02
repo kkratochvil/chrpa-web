@@ -995,6 +995,13 @@
                 }
                 grid.innerHTML = platneNovinky.map(item => {
                     if (item.typ === 'akce') {
+                        // Tlačítko - zobrazí se pouze pokud má text
+                        const btnText = item.tlacitko_text || '';
+                        const btnLink = item.tlacitko_link || item.letak || '';
+                        const btnHtml = btnText && btnLink
+                            ? `<a href="${btnLink}" target="_blank" class="akce-btn">${btnText}</a>`
+                            : '';
+
                         return `
                             <div class="akce-card">
                                 <div class="akce-letak">
@@ -1006,7 +1013,7 @@
                                     <div class="akce-misto">${item.misto}</div>
                                     <p class="akce-popis">${item.popis}</p>
                                     ${item.vstupne ? `<div class="akce-vstupne">Vstupné: ${item.vstupne}</div>` : ''}
-                                    <a href="${item.letak}" target="_blank" class="akce-btn">Zobrazit leták</a>
+                                    ${btnHtml}
                                 </div>
                             </div>
                         `;

@@ -2,13 +2,29 @@
     {
         "typ": "akce",
         "nazev": "Písně dávnejch cest",
-        "datum": "7. 2. 2026",
+        "datum": "7.2.2026",
         "cas": "18:00",
         "misto": "Malá scéna KC, Česká Třebová",
         "popis": "Trampský večer s kapelami Chrpa Chrudim, Samson Lenk a JeDaRa z Příbrami. Večerem Vás provede Petr Kulda.",
         "vstupne": "350 Kč",
         "letak": "images/letaky/pisne_davnejch_cest.jpg",
+        "tlacitko_text": "",
+        "tlacitko_link": "",
         "platnost_od": "",
-        "platnost_do": "7.2.2026"
+        "platnost_do": "10.2.2026"
+    },
+    {
+        "typ": "akce",
+        "nazev": "Trampské jaro 2026",
+        "datum": "21.3.2026",
+        "cas": "18:00",
+        "misto": "divadlo Karla Pippicha, Chrudim",
+        "popis": "Není krásnějšího času pro trampskou písničku než první jarní den. Společně s chrudimskou Chrpou, pražskou Sekvojí a brněnským T.E.Bandem přivítáme jaro v rytmu trampingu a přátelství. Celým večerem vás s radostí provede Roman Dostál.",
+        "vstupne": "200 Kč",
+        "letak": "images/letaky/trampske_jaro_2026.jpg",
+        "tlacitko_text": "Koupit lístky",
+        "tlacitko_link": "https://www.chrudimskabeseda.cz/akce/trampske-jaro-5",
+        "platnost_od": "",
+        "platnost_do": "21.3.2026"
     }
 ]

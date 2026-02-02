@@ -18,9 +18,21 @@ AKCE (koncert, festival)
     "popis": "Popis akce - kdo vystupuje, co se bude dít...",
     "vstupne": "350 Kč",
     "letak": "images/letaky/nazev_letaku.jpg",
+    "tlacitko_text": "Zobrazit leták",
+    "tlacitko_link": "",
     "platnost_od": "",
     "platnost_do": "7.2.2026"
 }
+
+TLAČÍTKO:
+- tlacitko_text = text na tlačítku (prázdné "" = tlačítko se nezobrazí)
+- tlacitko_link = odkaz (prázdné "" = použije se cesta z letak)
+
+Příklady:
+- Bez tlačítka:      "tlacitko_text": "", "tlacitko_link": ""
+- Leták:             "tlacitko_text": "Zobrazit leták", "tlacitko_link": ""
+- Koupit lístky:     "tlacitko_text": "Koupit lístky", "tlacitko_link": "https://goout.cz/..."
+- Web kapely:        "tlacitko_text": "Web JeDaRa", "tlacitko_link": "https://jedara.cz"
 
 ================================================================================
 PŘÍSPĚVEK S OBRÁZKEM
@@ -70,6 +82,8 @@ KOMPLETNÍ PŘÍKLAD akce.json
         "popis": "Trampský večer s kapelami Chrpa, Samson Lenk a JeDaRa.",
         "vstupne": "350 Kč",
         "letak": "images/letaky/pisne_davnejch_cest.jpg",
+        "tlacitko_text": "Koupit lístky",
+        "tlacitko_link": "https://goout.cz/akce/pisne-davnejch-cest",
         "platnost_od": "",
         "platnost_do": "7.2.2026"
     },
@@ -82,6 +96,8 @@ KOMPLETNÍ PŘÍKLAD akce.json
         "popis": "Tradiční jarní koncert v Chrudimi.",
         "vstupne": "",
         "letak": "images/letaky/trampske_jaro.jpg",
+        "tlacitko_text": "",
+        "tlacitko_link": "",
         "platnost_od": "1.2.2026",
         "platnost_do": "21.3.2026"
     }
